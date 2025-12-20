@@ -12,6 +12,8 @@
 .DS_Store
 .quarto
 
+README.html
+
 data_raw/*
 data_intermediary/*
 data_final/*
