@@ -1,3 +1,3 @@
 # Objetive
 
-The goal of this project is scrapes historical Brazilian commodity price series (cattle, milk, soy) by state from Agrolink and saves a cleaned monthly dataset.
+The goal of this project is to scrape historical Brazilian commodity price series (cattle, milk, and soy) by state from Agrolink and produce a cleaned, monthly dataset.
