@@ -73,7 +73,7 @@ boi_gordo_plot <- ggplot() +
             linewidth = 0.4) +
   # national average price
   geom_line(data = mean_boi_gordo, 
-            aes(x = date, y = national_mean, color = "Monthly mean"),
+            aes(x = date, y = national_mean, color = "National Average"),
             linewidth = 1) +
   # price in Pará State
   geom_line(data = all_data_prep_final %>% 
@@ -82,9 +82,9 @@ boi_gordo_plot <- ggplot() +
             linewidth = 1) +
   # add legend
   scale_color_manual(name = NULL,
-                     breaks = c("Pará State", "Monthly mean", "Other states"),
+                     breaks = c("Pará State", "National Average", "Other states"),
                      values = c("Other states"  = "grey35",
-                                "Monthly mean"  = "black",
+                                "National Average"  = "black",
                                 "Pará State"    = "red"))+
   labs(y = 'State price (R$)',
        x = 'Date',
@@ -98,5 +98,6 @@ boi_gordo_plot
 # Save 
 ##########################
 
-ggsave(boi_gordo_plot, width = 9, height = 6, filename = "figures/boi_gordo_plot.png")
+ggsave(boi_gordo_plot, width = 9, height = 6, 
+       filename = "figures/boi_gordo_plot.png")
 
