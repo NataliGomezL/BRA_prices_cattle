@@ -131,8 +131,16 @@ summary_results
 one <- results %>% filter(map_int(data, ~ if (is.null(.x)) 0L else nrow(.x)) == 0) %>% slice(1)
 one
 
+################
+# Clean dataset
+################
+
+all_data_clean <- all_data %>% 
+  select(product, state, date, state_value, national_value)
+all_data_clean
+
 #########################
 # Save outputs
 #######################
 
-saveRDS(all_data, "data_intermediary/agrolink_prices.rds", compress = "xz")
+saveRDS(all_data_clean, "data_intermediary/agrolink_prices.rds", compress = "xz")
