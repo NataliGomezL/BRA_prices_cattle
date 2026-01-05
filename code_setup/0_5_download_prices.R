@@ -118,13 +118,14 @@ all_data <- results %>%
 all_data
 
 ######################
-# Qick checks
+# Quick checks
 #######################
 
 # how many rows per combination
 summary_results <- results %>%
   mutate(n = map_int(data, ~ if (is.null(.x)) 0L else nrow(.x))) %>%
   arrange(n)
+summary_results
 
 # inspect a zero-row case
 one <- results %>% filter(map_int(data, ~ if (is.null(.x)) 0L else nrow(.x)) == 0) %>% slice(1)
